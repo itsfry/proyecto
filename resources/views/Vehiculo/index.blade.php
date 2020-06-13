@@ -18,7 +18,7 @@
 					<th>modelo</th>
 					<th>opciones</th>
 				</thead>
-			@foreach ($vehiculos as $vehiculo)
+			@foreach ($vehiculos as $vehiculo)	
 				<tr>
 				<td>{{ $vehiculo->id}}</td>
 				<td>{{ $vehiculo->tipo}}</td>

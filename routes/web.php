@@ -10,9 +10,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 
+*/
 
 Route::get('/', function () {
-    return view('welcome');
-});*/
+    return view('auth/login');
+});
+Route::get('/', 'ChatsController@index');
+Route::get('messages', 'ChatsController@fetchMessages');
+Route::post('messages', 'ChatsController@sendMessage');
+
+Route::resource('ticket','TicketController');
+
+Route::resource('ingresoV','Ingreso_vehiculoController');
+
+Route::resource('tarifa','TarifaController');
 
 Route::resource('vehiculo', 'VehiculoController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
